@@ -1,0 +1,21 @@
+<Solution>
+  <PropertyGroup Name="CatchBugs" Version="3.10.0.0" Type="CocosStudio" />
+  <SolutionFolder>
+    <Group ctype="ResourceGroup">
+      <RootFolder Name=".">
+        <Image Name="background.jpg" />
+        <Image Name="bird1.png" />
+        <Image Name="bird2.png" />
+        <Image Name="bug.png" />
+        <Project Name="MainScene.csd" Type="Scene" />
+        <Image Name="name.png" />
+        <Image Name="play_background.jpg" />
+        <Image Name="play_button.png" />
+        <Image Name="play_button_press.png" />
+        <Image Name="treeL.png" />
+        <Image Name="treeM.png" />
+        <Image Name="treeS.png" />
+      </RootFolder>
+    </Group>
+  </SolutionFolder>
+</Solution>
