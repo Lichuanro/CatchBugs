@@ -12,8 +12,9 @@ bool PlayLayer::init(){
     
     Size winSize = Director::getInstance()->getWinSize();
     
-    background = Sprite::create("res/play_background.jpg");
+    background = Sprite::create("res/background.jpg");
     background->setPosition(Vec2(winSize.width/2,winSize.height/2));
+    background->setScale(0.8, 0.9);
     this->addChild(background,0);
     
     return true;

@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		14CBBDC81CE229C20096F944 /* Bird.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 14CBBDC61CE229C20096F944 /* Bird.cpp */; };
+		14CBBDC91CE229C20096F944 /* Bird.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 14CBBDC61CE229C20096F944 /* Bird.cpp */; };
 		14E7FECD1CDE500B00BDACEB /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 14E7FEC91CDE348500BDACEB /* Images.xcassets */; };
 		14E7FECE1CDE500D00BDACEB /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 14E7FEC91CDE348500BDACEB /* Images.xcassets */; };
 		14E7FED11CDE51F700BDACEB /* PlayScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 14E7FECF1CDE51F700BDACEB /* PlayScene.cpp */; };
@@ -73,6 +75,8 @@
 
 /* Begin PBXFileReference section */
 		01F741B993AED8B544209AD5 /* res */ = {isa = PBXFileReference; lastKnownFileType = "?"; name = res; path = ../Resources/res; sourceTree = "<group>"; };
+		14CBBDC61CE229C20096F944 /* Bird.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Bird.cpp; sourceTree = "<group>"; };
+		14CBBDC71CE229C20096F944 /* Bird.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Bird.hpp; sourceTree = "<group>"; };
 		14E7FEC91CDE348500BDACEB /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = "CatchBugs-mobile/Images.xcassets"; sourceTree = SOURCE_ROOT; };
 		14E7FECF1CDE51F700BDACEB /* PlayScene.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = PlayScene.cpp; sourceTree = "<group>"; };
 		14E7FED01CDE51F700BDACEB /* PlayScene.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = PlayScene.hpp; sourceTree = "<group>"; };
@@ -269,6 +273,8 @@
 				14E7FED01CDE51F700BDACEB /* PlayScene.hpp */,
 				14E7FED41CDE52A600BDACEB /* EndScene.cpp */,
 				14E7FED51CDE52A600BDACEB /* EndScene.hpp */,
+				14CBBDC61CE229C20096F944 /* Bird.cpp */,
+				14CBBDC71CE229C20096F944 /* Bird.hpp */,
 			);
 			name = Classes;
 			path = ../Classes;
@@ -447,6 +453,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				14CBBDC81CE229C20096F944 /* Bird.cpp in Sources */,
 				14E7FED11CDE51F700BDACEB /* PlayScene.cpp in Sources */,
 				46880B8819C43A87006E1F66 /* AppDelegate.cpp in Sources */,
 				14E7FEDA1CDF765A00BDACEB /* SceneManager.cpp in Sources */,
@@ -467,6 +474,7 @@
 				14E7FEDB1CDF765A00BDACEB /* SceneManager.cpp in Sources */,
 				14E7FEDF1CDF80DB00BDACEB /* OpenScene.cpp in Sources */,
 				503AE10517EB98FF00D1A890 /* main.cpp in Sources */,
+				14CBBDC91CE229C20096F944 /* Bird.cpp in Sources */,
 				14E7FED21CDE51F700BDACEB /* PlayScene.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
