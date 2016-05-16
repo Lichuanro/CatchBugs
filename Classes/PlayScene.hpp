@@ -12,6 +12,9 @@
 #include <iostream>
 #include "cocos2d.h"
 #include "SceneManager.hpp"
+#include "GameLayer.hpp"
+#include "ControlLayer.hpp"
+#include "StatusLayer.hpp"
 USING_NS_CC;
 
 class SceneManager;
@@ -26,6 +29,25 @@ public:
     SceneManager * tsm;
     
     Sprite * background;
+    
+};
+
+class PlayScene:public Scene{
+    
+public:
+    virtual bool init();
+    
+    PlayScene();
+    ~PlayScene();
+    
+    void restart();
+    
+    CREATE_FUNC(PlayScene);
+    
+    void set_tsm(SceneManager * sceneManager);
+    
+private:
+    PlayLayer * playLayer;
     
 };
 

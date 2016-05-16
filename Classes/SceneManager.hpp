@@ -17,11 +17,13 @@
 
 USING_NS_CC;
 
+class PlayScene;
+
 class SceneManager{
     
 public:
     Scene * openScene;
-    Scene * playScene;
+    PlayScene * playScene;
     Scene * endScene;
     void createOpenScene();
     void gotoOpenScene();

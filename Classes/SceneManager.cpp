@@ -15,7 +15,6 @@ void SceneManager::createOpenScene(){
     layer->tsm = this;
     openScene->addChild(layer);
 
-    
 }
 
 void SceneManager::gotoOpenScene(){
@@ -32,10 +31,12 @@ void SceneManager::gotoOpenScene(){
 
 void SceneManager::gotoPlayScene(){
     
-    playScene = Scene::create();
-    PlayLayer * layer = PlayLayer::create();
-    layer->tsm = this;
-    playScene->addChild(layer);
+ //   PlayLayer * layer = PlayLayer::create();
+ //   layer->tsm = this;
+ //   playScene->addChild(layer);
+    
+    playScene = PlayScene::create();
+    playScene->set_tsm(this);
     
     Director::getInstance()->replaceScene(playScene);
     

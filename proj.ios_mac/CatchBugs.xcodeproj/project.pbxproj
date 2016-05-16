@@ -9,6 +9,12 @@
 /* Begin PBXBuildFile section */
 		14CBBDC81CE229C20096F944 /* Bird.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 14CBBDC61CE229C20096F944 /* Bird.cpp */; };
 		14CBBDC91CE229C20096F944 /* Bird.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 14CBBDC61CE229C20096F944 /* Bird.cpp */; };
+		14CBBDCC1CE614DF0096F944 /* GameLayer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 14CBBDCA1CE614DF0096F944 /* GameLayer.cpp */; };
+		14CBBDCD1CE614DF0096F944 /* GameLayer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 14CBBDCA1CE614DF0096F944 /* GameLayer.cpp */; };
+		14CBBDD01CE618BB0096F944 /* ControlLayer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 14CBBDCE1CE618BB0096F944 /* ControlLayer.cpp */; };
+		14CBBDD11CE618BB0096F944 /* ControlLayer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 14CBBDCE1CE618BB0096F944 /* ControlLayer.cpp */; };
+		14CBBDD41CE8B29C0096F944 /* StatusLayer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 14CBBDD21CE8B29C0096F944 /* StatusLayer.cpp */; };
+		14CBBDD51CE8B29C0096F944 /* StatusLayer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 14CBBDD21CE8B29C0096F944 /* StatusLayer.cpp */; };
 		14E7FECD1CDE500B00BDACEB /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 14E7FEC91CDE348500BDACEB /* Images.xcassets */; };
 		14E7FECE1CDE500D00BDACEB /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 14E7FEC91CDE348500BDACEB /* Images.xcassets */; };
 		14E7FED11CDE51F700BDACEB /* PlayScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 14E7FECF1CDE51F700BDACEB /* PlayScene.cpp */; };
@@ -77,6 +83,12 @@
 		01F741B993AED8B544209AD5 /* res */ = {isa = PBXFileReference; lastKnownFileType = "?"; name = res; path = ../Resources/res; sourceTree = "<group>"; };
 		14CBBDC61CE229C20096F944 /* Bird.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Bird.cpp; sourceTree = "<group>"; };
 		14CBBDC71CE229C20096F944 /* Bird.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Bird.hpp; sourceTree = "<group>"; };
+		14CBBDCA1CE614DF0096F944 /* GameLayer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = GameLayer.cpp; sourceTree = "<group>"; };
+		14CBBDCB1CE614DF0096F944 /* GameLayer.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = GameLayer.hpp; sourceTree = "<group>"; };
+		14CBBDCE1CE618BB0096F944 /* ControlLayer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ControlLayer.cpp; sourceTree = "<group>"; };
+		14CBBDCF1CE618BB0096F944 /* ControlLayer.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = ControlLayer.hpp; sourceTree = "<group>"; };
+		14CBBDD21CE8B29C0096F944 /* StatusLayer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = StatusLayer.cpp; sourceTree = "<group>"; };
+		14CBBDD31CE8B29C0096F944 /* StatusLayer.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = StatusLayer.hpp; sourceTree = "<group>"; };
 		14E7FEC91CDE348500BDACEB /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = "CatchBugs-mobile/Images.xcassets"; sourceTree = SOURCE_ROOT; };
 		14E7FECF1CDE51F700BDACEB /* PlayScene.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = PlayScene.cpp; sourceTree = "<group>"; };
 		14E7FED01CDE51F700BDACEB /* PlayScene.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = PlayScene.hpp; sourceTree = "<group>"; };
@@ -275,6 +287,12 @@
 				14E7FED51CDE52A600BDACEB /* EndScene.hpp */,
 				14CBBDC61CE229C20096F944 /* Bird.cpp */,
 				14CBBDC71CE229C20096F944 /* Bird.hpp */,
+				14CBBDCA1CE614DF0096F944 /* GameLayer.cpp */,
+				14CBBDCB1CE614DF0096F944 /* GameLayer.hpp */,
+				14CBBDCE1CE618BB0096F944 /* ControlLayer.cpp */,
+				14CBBDCF1CE618BB0096F944 /* ControlLayer.hpp */,
+				14CBBDD21CE8B29C0096F944 /* StatusLayer.cpp */,
+				14CBBDD31CE8B29C0096F944 /* StatusLayer.hpp */,
 			);
 			name = Classes;
 			path = ../Classes;
@@ -456,10 +474,13 @@
 				14CBBDC81CE229C20096F944 /* Bird.cpp in Sources */,
 				14E7FED11CDE51F700BDACEB /* PlayScene.cpp in Sources */,
 				46880B8819C43A87006E1F66 /* AppDelegate.cpp in Sources */,
+				14CBBDD01CE618BB0096F944 /* ControlLayer.cpp in Sources */,
 				14E7FEDA1CDF765A00BDACEB /* SceneManager.cpp in Sources */,
 				14E7FEDE1CDF80DB00BDACEB /* OpenScene.cpp in Sources */,
+				14CBBDCC1CE614DF0096F944 /* GameLayer.cpp in Sources */,
 				503AE10017EB989F00D1A890 /* AppController.mm in Sources */,
 				14E7FED61CDE52A600BDACEB /* EndScene.cpp in Sources */,
+				14CBBDD41CE8B29C0096F944 /* StatusLayer.cpp in Sources */,
 				503AE10217EB989F00D1A890 /* RootViewController.mm in Sources */,
 				503AE10117EB989F00D1A890 /* main.m in Sources */,
 			);
@@ -474,6 +495,9 @@
 				14E7FEDB1CDF765A00BDACEB /* SceneManager.cpp in Sources */,
 				14E7FEDF1CDF80DB00BDACEB /* OpenScene.cpp in Sources */,
 				503AE10517EB98FF00D1A890 /* main.cpp in Sources */,
+				14CBBDD51CE8B29C0096F944 /* StatusLayer.cpp in Sources */,
+				14CBBDD11CE618BB0096F944 /* ControlLayer.cpp in Sources */,
+				14CBBDCD1CE614DF0096F944 /* GameLayer.cpp in Sources */,
 				14CBBDC91CE229C20096F944 /* Bird.cpp in Sources */,
 				14E7FED21CDE51F700BDACEB /* PlayScene.cpp in Sources */,
 			);
