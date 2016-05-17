@@ -39,7 +39,6 @@ bool GameLayer::init(){
         this->createTrees();
         
         moveAllTrees = schedule_selector(GameLayer::moveTrees);
-        this->schedule(moveAllTrees, 0.01f);
         
         this->scheduleUpdate();
         
@@ -68,6 +67,7 @@ void GameLayer::onTouch(){
     if (this->gameStatus == GAME_READY) {
         this->delegator->gameStart();
         this->bird->fly();
+        this->schedule(moveAllTrees, 0.01f);
         this->gameStatus = GAME_START;
     }
     
@@ -109,6 +109,25 @@ void GameLayer::createTrees(){
     treeM->setPosition(Vec2(visibleSize.width*1.9,0));
     treeS->setPosition(Vec2(visibleSize.width*1.5,0));
     
+    auto bodyL = PhysicsBody::create();
+    auto shapeL1 = PhysicsShapeEdgeSegment::create(Vec2(0,-260), Vec2(0,250));
+    bodyL->addShape(shapeL1);
+    bodyL->setDynamic(false);
+    treeL->setPhysicsBody(bodyL);
+    
+    auto bodyM = PhysicsBody::create();
+    auto shapeM1 = PhysicsShapeEdgeSegment::create(Vec2(0,-200), Vec2(0,195));
+    bodyM->addShape(shapeM1);
+    bodyM->setDynamic(false);
+    treeM->setPhysicsBody(bodyM);
+    
+    auto bodyS = PhysicsBody::create();
+    auto shapeS1 = PhysicsShapeEdgeSegment::create(Vec2(0,-130), Vec2(0,115));
+    bodyS->addShape(shapeS1);
+    bodyS->setDynamic(false);
+    treeS->setPhysicsBody(bodyS);
+    
+    
     this->addChild(treeL);
     this->addChild(treeM);
     this->addChild(treeS);
@@ -141,6 +160,10 @@ void GameLayer::moveTrees(float dt){
         }
     }
     
+    
+}
+
+void GameLayer::checkCollide(){
     
 }
 

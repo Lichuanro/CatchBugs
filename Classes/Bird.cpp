@@ -37,7 +37,7 @@ Bird * Bird::getInstance(){
         shareBird = (Bird*)Sprite::create("res/bird1.png");
         Size winSize = Director::getInstance()->getWinSize();
         shareBird->setPosition(Vec2(winSize.width/2, winSize.height/2));
-        shareBird->setScale(0.08, 0.08);
+        shareBird->setScale(0.07, 0.07);
     }
     return shareBird;
 }
@@ -69,7 +69,7 @@ Bird* Bird::createBird(){
     ActionInterval * down = up->reverse();
     
     this->moveAction = RepeatForever::create(Sequence::create(up,down, NULL));
-
+    
     return this;
     
 }
