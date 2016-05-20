@@ -110,20 +110,36 @@ void GameLayer::createTrees(){
     treeS->setPosition(Vec2(visibleSize.width*1.5,0));
     
     auto bodyL = PhysicsBody::create();
-    auto shapeL1 = PhysicsShapeEdgeSegment::create(Vec2(0,-260), Vec2(0,250));
+    auto shapeL1 = PhysicsShapeEdgeSegment::create(Vec2(4,-260), Vec2(4,250));
+    auto shapeL2 = PhysicsShapeEdgeSegment::create(Vec2(4,5), Vec2(-100,105));
+    auto shapeL3 = PhysicsShapeEdgeSegment::create(Vec2(4,95), Vec2(100,198));
+    auto shapeL4 = PhysicsShapeEdgeSegment::create(Vec2(4,-76), Vec2(95,20));
     bodyL->addShape(shapeL1);
+    bodyL->addShape(shapeL2);
+    bodyL->addShape(shapeL3);
+    bodyL->addShape(shapeL4);
     bodyL->setDynamic(false);
     treeL->setPhysicsBody(bodyL);
     
     auto bodyM = PhysicsBody::create();
     auto shapeM1 = PhysicsShapeEdgeSegment::create(Vec2(0,-200), Vec2(0,195));
+    auto shapeM2 = PhysicsShapeEdgeSegment::create(Vec2(4,10), Vec2(-85,95));
+    auto shapeM3 = PhysicsShapeEdgeSegment::create(Vec2(4,95), Vec2(60,145));
+    auto shapeM4 = PhysicsShapeEdgeSegment::create(Vec2(4,-40), Vec2(85,40));
     bodyM->addShape(shapeM1);
+    bodyM->addShape(shapeM2);
+    bodyM->addShape(shapeM3);
+    bodyM->addShape(shapeM4);
     bodyM->setDynamic(false);
     treeM->setPhysicsBody(bodyM);
     
     auto bodyS = PhysicsBody::create();
-    auto shapeS1 = PhysicsShapeEdgeSegment::create(Vec2(0,-130), Vec2(0,115));
+    auto shapeS1 = PhysicsShapeEdgeSegment::create(Vec2(4,-130), Vec2(4,115));
+    auto shapeS2 = PhysicsShapeEdgeSegment::create(Vec2(4,-40), Vec2(-55,20));
+    auto shapeS3 = PhysicsShapeEdgeSegment::create(Vec2(4,20), Vec2(65,75));
     bodyS->addShape(shapeS1);
+    bodyS->addShape(shapeS2);
+    bodyS->addShape(shapeS3);
     bodyS->setDynamic(false);
     treeS->setPhysicsBody(bodyS);
     
@@ -164,6 +180,7 @@ void GameLayer::moveTrees(float dt){
 }
 
 void GameLayer::checkCollide(){
+    
     
 }
 
