@@ -32,6 +32,9 @@ bool GameLayer::init(){
         body->setLinearDamping(0.0f);
         body->setGravityEnable(false);
         this->bird->setPhysicsBody(body);
+        this->bird->getPhysicsBody()->setCollisionBitmask(1);
+        this->bird->getPhysicsBody()->setCategoryBitmask(1);
+        this->bird->getPhysicsBody()->setContactTestBitmask(1);
         this->bird->setPosition(origin.x + visibleSize.width/6 , origin.y + visibleSize.height/2 + 5);
         this->bird->ready();
         this->addChild(this->bird);
@@ -54,7 +57,7 @@ bool GameLayer::init(){
 }
 
 bool GameLayer::onContactBegin(const cocos2d::PhysicsContact &contact){
-    this->gameOver();
+//    this->gameOver();
     return true;
 }
 
@@ -62,12 +65,16 @@ void GameLayer::onTouch(){
     if (this->gameStatus == GAME_OVER) {
         return;
     }
-    
 //    SimpleAudioEngine::getInstance()->playEffect(<#const char *filePath#>);
     if (this->gameStatus == GAME_READY) {
         this->delegator->gameStart();
         this->bird->fly();
+        
         this->schedule(moveAllTrees, 0.01f);
+        
+        bugManager = BugManager::create();
+        this->addChild(bugManager);
+        
         this->gameStatus = GAME_START;
     }
     
@@ -85,7 +92,6 @@ void GameLayer::rotateBird(){
 void GameLayer::update(float delta){
     if (this->gameStatus == GAME_START) {
         this->rotateBird();
-        this->bird->swing();
  //       this->checkCollide();
     }
 }
@@ -120,6 +126,9 @@ void GameLayer::createTrees(){
     bodyL->addShape(shapeL4);
     bodyL->setDynamic(false);
     treeL->setPhysicsBody(bodyL);
+    treeL->getPhysicsBody()->setCollisionBitmask(1);
+    treeL->getPhysicsBody()->setCategoryBitmask(1);
+    treeL->getPhysicsBody()->setContactTestBitmask(1);
     
     auto bodyM = PhysicsBody::create();
     auto shapeM1 = PhysicsShapeEdgeSegment::create(Vec2(0,-200), Vec2(0,195));
@@ -132,6 +141,9 @@ void GameLayer::createTrees(){
     bodyM->addShape(shapeM4);
     bodyM->setDynamic(false);
     treeM->setPhysicsBody(bodyM);
+    treeM->getPhysicsBody()->setCollisionBitmask(1);
+    treeM->getPhysicsBody()->setCategoryBitmask(1);
+    treeM->getPhysicsBody()->setContactTestBitmask(1);
     
     auto bodyS = PhysicsBody::create();
     auto shapeS1 = PhysicsShapeEdgeSegment::create(Vec2(4,-130), Vec2(4,115));
@@ -142,6 +154,9 @@ void GameLayer::createTrees(){
     bodyS->addShape(shapeS3);
     bodyS->setDynamic(false);
     treeS->setPhysicsBody(bodyS);
+    treeS->getPhysicsBody()->setCollisionBitmask(1);
+    treeS->getPhysicsBody()->setCategoryBitmask(1);
+    treeS->getPhysicsBody()->setContactTestBitmask(1);
     
     
     this->addChild(treeL);

@@ -65,7 +65,7 @@ Bird* Bird::createBird(){
     flyAnimation->setLoops(2);
     this->flyAction = Animate::create(flyAnimation);
     
-    ActionInterval * up = MoveBy::create(0.4f, Point(0,8));
+    ActionInterval * up = MoveBy::create(1.0f, Point(0,16));
     ActionInterval * down = up->reverse();
     
     this->moveAction = RepeatForever::create(Sequence::create(up,down, NULL));

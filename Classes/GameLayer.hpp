@@ -11,6 +11,7 @@
 
 #include "cocos2d.h"
 #include "Bird.hpp"
+#include "Bug.hpp"
 #include "ControlLayer.hpp"
 #include "SimpleAudioEngine.h"
 #include <cstdlib>
@@ -74,7 +75,7 @@ private:
     
     void birdRemove();
     
-    bool onContactBegin(const PhysicsContact & contact);
+    bool onContactBegin(const cocos2d::PhysicsContact &contact);
     
     void gameOver();
     
@@ -85,6 +86,7 @@ private:
     int score;
     
     Bird * bird;
+    BugManager * bugManager;
     
     Sprite * treeL;
     Sprite * treeM;
