@@ -27,8 +27,6 @@ typedef enum game_Status {
 #define min(x,y) ((x)<(y) ? (x) : (y))
 #define max(x,y) ((x)>(y) ? (x) : (y))
 
-const int BIRD_RADIUS = 640;
-
 class StatusDelegate{
     
 public:

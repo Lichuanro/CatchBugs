@@ -28,6 +28,8 @@ public:
     void reset();
     bool checkEaten();
     
+    void setBugTag(int tag);
+    
 private:
     Sprite * bug;
     bool isEaten;    //true for already being eaten
@@ -46,6 +48,8 @@ public:
     virtual bool init();
     
     virtual void update(float dt);
+    
+    void resetBug(int tag);
     
 private:
     void createBug();

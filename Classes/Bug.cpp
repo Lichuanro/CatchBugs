@@ -28,7 +28,12 @@ void Bug::createBug(){
     auto body = PhysicsBody::create();
     body->addShape(PhysicsShapeCircle::create(300));
     body->setDynamic(false);
+
+    
     bug->setPhysicsBody(body);
+    bug->getPhysicsBody()->setCollisionBitmask(1);
+    bug->getPhysicsBody()->setCategoryBitmask(1);
+    bug->getPhysicsBody()->setContactTestBitmask(1);
     
     addChild(bug);
     
@@ -43,6 +48,7 @@ void Bug::createBug(){
 
 void Bug::show(){
     bug->setVisible(true);
+    isEaten = false;
 }
 
 void Bug::caught(){
@@ -68,6 +74,10 @@ bool Bug::checkEaten(){
     return isEaten;
 }
 
+void Bug::setBugTag(int tag){
+    bug->setTag(tag);
+}
+
 
 bool BugManager::init(){
     
@@ -81,6 +91,7 @@ void BugManager::createBug(){
     for (int i = 0; i < MAX_BUGS; i++) {
         bug = new Bug;
         bug->createBug();
+        bug->setBugTag(3+i);
         bug->reset();
         
         this->addChild(bug);
@@ -101,6 +112,11 @@ void BugManager::update(float dt){
         }
     }
     
+}
+
+void BugManager::resetBug(int tag){
+    bugs.at(tag-3)->caught();
+    log("caught");
 }
 
 
