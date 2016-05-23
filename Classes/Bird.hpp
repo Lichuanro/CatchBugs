@@ -43,6 +43,7 @@ public:
     
 private:
     static Bird * shareBird;
+
     
     bool changeState(ActionState actionState);
     
@@ -50,6 +51,7 @@ private:
     Action * flyAction;
     Action * swingAction;
     Action * moveAction;
+    Action * catchBugAction;
     
     
     ActionState current_actionState;

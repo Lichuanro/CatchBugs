@@ -18,8 +18,8 @@ GameLayer::~GameLayer(){
 
 bool GameLayer::init(){
     if (Layer::init()) {
-        Size visibleSize = Director::getInstance()->getVisibleSize();
-        Point origin = Director::getInstance()->getVisibleOrigin();
+        visibleSize = Director::getInstance()->getVisibleSize();
+        origin = Director::getInstance()->getVisibleOrigin();
         
         this->gameStatus = GAME_READY;
         this->score = 0;
@@ -27,7 +27,7 @@ bool GameLayer::init(){
         this->bird = Bird::getInstance();
         this->bird->createBird();
         PhysicsBody * body = PhysicsBody::create();
-        body->addShape(PhysicsShapeCircle::create(640));
+        body->addShape(PhysicsShapeCircle::create(620));
         body->setDynamic(true);
         body->setLinearDamping(0.0f);
         body->setGravityEnable(false);
@@ -70,18 +70,21 @@ bool GameLayer::onContactBegin(const cocos2d::PhysicsContact &contact){
     if (tag_A == 2 && tag_B >= 3) {
         this->bird->catchBugs();
         bugManager->resetBug(tag_B);
+        this->score++;
         
     }
     
     else if (tag_B == 2 && tag_A >= 3) {
         this->bird->catchBugs();
         bugManager->resetBug(tag_A);
+        this->score++;
         
     }
     
     else
         this->gameOver();
     
+    this->delegator->gamePlay(score);
     return true;
 }
 
@@ -116,7 +119,7 @@ void GameLayer::rotateBird(){
 void GameLayer::update(float delta){
     if (this->gameStatus == GAME_START) {
         this->rotateBird();
- //       this->checkCollide();
+        this->bird->setPositionX(origin.x + visibleSize.width/6);
     }
 }
 
@@ -239,8 +242,10 @@ void GameLayer::gameOver(){
  //   SimpleAudioEngine::getInstance()->playEffect(<#const char *filePath#>);
     this->bird->die();
     this->bird->setRotation(-90);
-    this->birdFadeOut();
-    this->birdRemove();
+//    this->birdFadeOut();
+//    this->birdRemove();
+    this->bugManager->unscheduleUpdate();
+    this->unschedule(moveAllTrees);
     this->gameStatus = GAME_OVER;
 }
 

@@ -31,6 +31,7 @@ Bird::~Bird(){
     
 }
 
+
 Bird * Bird::shareBird = nullptr;
 Bird * Bird::getInstance(){
     if (shareBird == NULL) {
@@ -44,7 +45,7 @@ Bird * Bird::getInstance(){
 
 
 Bird* Bird::createBird(){
-
+    
     Animation * readyAnimation = Animation::create();
     readyAnimation->addSpriteFrameWithFile("res/bird1.png");
     readyAnimation->addSpriteFrameWithFile("res/bird2.png");
@@ -65,10 +66,16 @@ Bird* Bird::createBird(){
     flyAnimation->setLoops(2);
     this->flyAction = Animate::create(flyAnimation);
     
-    ActionInterval * up = MoveBy::create(1.0f, Point(0,16));
+    ActionInterval * up = MoveBy::create(0.4f, Point(0,8));
     ActionInterval * down = up->reverse();
     
     this->moveAction = RepeatForever::create(Sequence::create(up,down, NULL));
+    
+    ActionInterval * rotateWhenCatchBug = RotateBy::create(0.1, 30);
+    
+    this->catchBugAction = Repeat::create(Sequence::create(rotateWhenCatchBug,rotateWhenCatchBug->reverse(), NULL), 1);
+    
+    
     
     return this;
     
@@ -104,7 +111,7 @@ void Bird::swing(){
 
 void Bird::catchBugs(){
     changeState(CATCHBUGS_ACTION);
-    this->runAction(moveAction);
+ //   this->runAction(catchBugAction);
     
 }
 

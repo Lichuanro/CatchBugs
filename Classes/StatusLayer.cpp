@@ -7,6 +7,7 @@
 //
 
 #include "StatusLayer.hpp"
+#include <stdio.h>
 
 StatusLayer::StatusLayer(){
     
@@ -39,6 +40,9 @@ void StatusLayer::showReady(){
 //    this->addChild(count3);
 //    this->addChild(count2);
 //    this->addChild(count1);
+    
+    score = Sprite::create();
+    
 
 
 }
@@ -56,10 +60,24 @@ void StatusLayer::showOver(int current, int best){
 }
 
 void StatusLayer::gameStart(){
+    Sprite * scoreLable = Sprite::create("res/scoreLabel.png");
+    scoreLable->setPosition(Vec2(this->visibleSize.width * 0.85, this->visibleSize.height * 0.94));
+    scoreLable->setScale(0.3, 0.3);
+    this->addChild(scoreLable);
+    
+    scoreNumber = LabelAtlas::create("0", "res/numbers.png", 68, 110, '0');
+    scoreNumber->setPosition(Vec2(this->visibleSize.width * 0.91, this->visibleSize.height * 0.925));
+    scoreNumber->setScale(0.3,0.3);
+    this->addChild(scoreNumber);
+    
     this->showStart();
 }
 
 void StatusLayer::gamePlay(int score){
+
+    sprintf(scoreString, "%d", score);
+    scoreNumber->setString(scoreString);
+    
     
 }
 

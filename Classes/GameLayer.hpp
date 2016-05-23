@@ -81,6 +81,9 @@ private:
     
     GameStatus gameStatus;
     
+    Size visibleSize;
+    Point origin;
+    
     int score;
     
     Bird * bird;

@@ -13,6 +13,7 @@
 #include "GameLayer.hpp"
 #include "PlayScene.hpp"
 #include "SimpleAudioEngine.h"
+#include <cstdlib>
 
 USING_NS_CC;
 
@@ -65,6 +66,9 @@ private:
     Point originPoint;
     
     Size visibleSize;
+    
+    LabelAtlas * scoreNumber;
+    char scoreString[4];
     
 };
 
