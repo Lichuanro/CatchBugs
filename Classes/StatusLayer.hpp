@@ -45,11 +45,15 @@ private:
     
     void addReplayButton();
     
+    void addEndButton();
+    
     void refreshScoreCallback();
     
     void refreshScoreExecutor(float dt);
     
     void replayButtonCallBack(Ref *sender);
+    
+    void endButtonCallBack(Ref *sender);
 
     
     Sprite * count3;

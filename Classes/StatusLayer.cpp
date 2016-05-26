@@ -90,13 +90,15 @@ void StatusLayer::gameOver(int bestScore){
     gameOverBoard->setPosition(Vec2(visibleSize.width/2, visibleSize.height/2));
     this->addChild(gameOverBoard);
     
-    LabelAtlas * finalScore = LabelAtlas::create(scoreString, "res/numbers.png", 68, 110, '0');
-    finalScore->setPosition(Vec2(this->visibleSize.width * 0.46, this->visibleSize.height * 0.44));
+    LabelAtlas * finalScore = LabelAtlas::create(scoreString, "res/numbers.png", 68.5, 110, '0');
+    finalScore->setAnchorPoint(Vec2(0.5,0.5));
+    finalScore->setPosition(Vec2(this->visibleSize.width * 0.5, this->visibleSize.height * 0.51));
     finalScore->setScale(0.9,0.9);
     
     this->addChild(finalScore);
     
     this->addReplayButton();
+    this->addEndButton();
 }
 
 
@@ -115,5 +117,20 @@ void StatusLayer::addReplayButton(){
     menu->setPosition(Vec2(this->visibleSize.width * 0.38, this->visibleSize.height*0.35));
     this->addChild(menu);
     
+}
+
+void StatusLayer::endButtonCallBack(Ref *sender){
+    Director::getInstance()->end();
+    exit(0);
+}
+
+void StatusLayer::addEndButton(){
+    MenuItemImage * endMenu = MenuItemImage::create("res/end_button.png", "res/end_button_press.png", CC_CALLBACK_1(StatusLayer::endButtonCallBack, this));
+    endMenu->setScale(0.3);
+    
+    auto menu = Menu::create(endMenu,NULL);
+    menu->setPosition(Vec2(this->visibleSize.width * 0.62, this->visibleSize.height*0.35));
+    this->addChild(menu);
+
 }
 
