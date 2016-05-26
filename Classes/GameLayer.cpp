@@ -7,6 +7,7 @@
 //
 
 #include "GameLayer.hpp"
+#include <iostream>
 
 GameLayer::GameLayer(){
     
@@ -23,23 +24,14 @@ bool GameLayer::init(){
         
         this->gameStatus = GAME_READY;
         this->score = 0;
+
+        bird = NULL;
+        bird = new Bird;
+        bird->Bird::createBird();
+        bird->setPosition(origin.x + visibleSize.width/6 , origin.y + visibleSize.height/2 + 5);
         
-        this->bird = Bird::getInstance();
-        this->bird->createBird();
-        PhysicsBody * body = PhysicsBody::create();
-        body->addShape(PhysicsShapeCircle::create(620));
-        body->setDynamic(true);
-        body->setLinearDamping(0.0f);
-        body->setGravityEnable(false);
-        this->bird->setPhysicsBody(body);
-        this->bird->getPhysicsBody()->setCollisionBitmask(1);
-        this->bird->getPhysicsBody()->setCategoryBitmask(1);
-        this->bird->getPhysicsBody()->setContactTestBitmask(1);
-        this->bird->setTag(2);
-        this->bird->setPosition(origin.x + visibleSize.width/6 , origin.y + visibleSize.height/2 + 5);
-        this->bird->ready();
         this->addChild(this->bird);
-        
+        bird->ready();
         
         this->createTrees();
         
@@ -103,10 +95,11 @@ void GameLayer::onTouch(){
         this->addChild(bugManager);
         
         this->gameStatus = GAME_START;
+        this->delegator->gamePlay(score);
     }
     
     else if (this->gameStatus == GAME_START){
-        this->bird->getPhysicsBody()->setVelocity(Vec2(0,260));
+        this->bird->setVelocity();
     }
     
 }
@@ -118,8 +111,8 @@ void GameLayer::rotateBird(){
 
 void GameLayer::update(float delta){
     if (this->gameStatus == GAME_START) {
-        this->rotateBird();
-        this->bird->setPositionX(origin.x + visibleSize.width/6);
+        this->bird->rotateBird();
+        bird->setPosX();
     }
 }
 
@@ -246,6 +239,10 @@ void GameLayer::gameOver(){
 //    this->birdRemove();
     this->bugManager->unscheduleUpdate();
     this->unschedule(moveAllTrees);
+    
+    this->delegator->gameOver(0);
+    
+    
     this->gameStatus = GAME_OVER;
 }
 

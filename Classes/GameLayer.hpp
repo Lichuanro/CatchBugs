@@ -21,6 +21,7 @@ using namespace CocosDenshion;
 typedef enum game_Status {
     GAME_READY = 1,
     GAME_START,
+    GAME_REPLAY,
     GAME_OVER
 }GameStatus;
 
@@ -34,7 +35,7 @@ public:
     
     virtual void gamePlay(int score) = 0;
     
-    virtual void gameOver(int currentScore, int bestScore) = 0;
+    virtual void gameOver(int bestScore) = 0;
     
 };
 

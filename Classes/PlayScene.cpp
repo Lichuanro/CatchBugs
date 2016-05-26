@@ -72,5 +72,5 @@ bool PlayScene::init(){
 
 void PlayScene::restart(){
     this->removeAllChildrenWithCleanup(true);
-    this->init();
+//    this->init();
 }
