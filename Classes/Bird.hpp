@@ -23,7 +23,7 @@ typedef enum action_State{
     DIE_ACTION
     }ActionState;
 
-class Bird:public Sprite{
+class Bird:public Node{
     
 public:
     Bird();
@@ -33,17 +33,22 @@ public:
     
     static Bird * getInstance();
     
-    Bird* createBird();
+    void createBird();
     
     void ready();
     void fly();
     void swing();
     void catchBugs();
     void die();
+    void setVelocity();
+    void setPosX();
+    void rotateBird();
     
 private:
     static Bird * shareBird;
+    Sprite * bird;
 
+    bool createdAlready;
     
     bool changeState(ActionState actionState);
     

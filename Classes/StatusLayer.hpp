@@ -17,6 +17,7 @@
 
 USING_NS_CC;
 
+class SceneManager;
 
 class StatusLayer:public Layer, public StatusDelegate{
   
@@ -30,25 +31,26 @@ public:
     
     virtual void gameStart(void);
     virtual void gamePlay(int score);
-    virtual void gameOver(int currentScore, int bestScore);
+    virtual void gameOver(int bestScore);
     
 private:
     void showReady();
     void showStart();
-    void showOver(int current, int best);
+    void showOver(int best);
     
     
     void fadeInGameOver();
     
     void jumpToScorePanel();
     
-    void fadeInRestartBtn();
+    void addReplayButton();
     
     void refreshScoreCallback();
     
     void refreshScoreExecutor(float dt);
-
     
+    void replayButtonCallBack(Ref *sender);
+
     
     Sprite * count3;
     Sprite * count2;
@@ -56,10 +58,7 @@ private:
     Sprite * score;
     
     
-    int currentScore;
     int bestScore;
-    
-    int tmpScore;
     
     bool isNewRecord;
     
@@ -69,6 +68,7 @@ private:
     
     LabelAtlas * scoreNumber;
     char scoreString[4];
+    
     
 };
 

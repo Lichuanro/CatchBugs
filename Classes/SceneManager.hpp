@@ -28,6 +28,7 @@ public:
     void createOpenScene();
     void gotoOpenScene();
     void gotoPlayScene();
+    void replay();
     void gotoEndScene();
     
 };

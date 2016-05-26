@@ -12,6 +12,7 @@
 USING_NS_CC;
 
 bool Bird::init(){
+    createdAlready = false;
     return true;
 }
 
@@ -44,7 +45,25 @@ Bird * Bird::getInstance(){
 }
 
 
-Bird* Bird::createBird(){
+void Bird::createBird(){
+    
+    bird = Sprite::create("res/bird1.png");
+    Size winSize = Director::getInstance()->getWinSize();
+ //   bird->setPosition(Vec2(winSize.width/2, winSize.height/2));
+    bird->setScale(0.07, 0.07);
+    
+    PhysicsBody * body = PhysicsBody::create();
+    body->addShape(PhysicsShapeCircle::create(620));
+    body->setDynamic(true);
+    body->setLinearDamping(0.0f);
+    body->setGravityEnable(false);
+    bird->setPhysicsBody(body);
+    bird->getPhysicsBody()->setCollisionBitmask(1);
+    bird->getPhysicsBody()->setCategoryBitmask(1);
+    bird->getPhysicsBody()->setContactTestBitmask(1);
+    bird->setTag(2);
+    
+    addChild(bird);
     
     Animation * readyAnimation = Animation::create();
     readyAnimation->addSpriteFrameWithFile("res/bird1.png");
@@ -75,9 +94,7 @@ Bird* Bird::createBird(){
     
     this->catchBugAction = Repeat::create(Sequence::create(rotateWhenCatchBug,rotateWhenCatchBug->reverse(), NULL), 1);
     
-    
-    
-    return this;
+        
     
 }
 
@@ -90,14 +107,14 @@ bool Bird::changeState(ActionState actionState){
 
 void Bird::ready(){
     changeState(READY_ACTION);
-    this->runAction(readyAction);
-    this->runAction(moveAction);
+    bird->runAction(readyAction);
+    bird->runAction(moveAction);
     
 }
 
 void Bird::fly(){
     changeState(FLY_ACTION);
-    this->getPhysicsBody()->setGravityEnable(true);
+    bird->getPhysicsBody()->setGravityEnable(true);
     
 }
 
@@ -117,6 +134,21 @@ void Bird::catchBugs(){
 
 void Bird::die(){
     changeState(DIE_ACTION);
-    this->stopAllActions();
+    bird->stopAllActions();
     
 }
+
+void Bird::setPosX(){
+    bird->setPositionX(0);
+}
+
+void Bird::setVelocity(){
+    bird->getPhysicsBody()->setVelocity(Vec2(0,260));
+}
+
+void Bird::rotateBird(){
+    float vertcalSpeed = this->bird->getPhysicsBody()->getVelocity().y;
+    this->bird->setRotation(fmin(fmax(-90, vertcalSpeed*0.2 + 60), 30));
+    
+}
+

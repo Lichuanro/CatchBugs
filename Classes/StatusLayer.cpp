@@ -18,11 +18,12 @@ StatusLayer::~StatusLayer(){
 
 
 bool StatusLayer::init(){
-    this->bestScore = 0;
-    this->currentScore = 0;
+ //   this->bestScore = 0;
+ //   this->currentScore = 0;
     
     this->visibleSize = Director::getInstance()->getVisibleSize();
     this->originPoint = Director::getInstance()->getVisibleOrigin();
+
     
     this->showReady();
     
@@ -53,9 +54,9 @@ void StatusLayer::showStart(){
 }
 
 
-void StatusLayer::showOver(int current, int best){
-    this->currentScore = current;
-    this->bestScore = best;
+void StatusLayer::showOver(int best){
+    
+
     
 }
 
@@ -65,7 +66,7 @@ void StatusLayer::gameStart(){
     scoreLable->setScale(0.3, 0.3);
     this->addChild(scoreLable);
     
-    scoreNumber = LabelAtlas::create("0", "res/numbers.png", 68, 110, '0');
+    scoreNumber = LabelAtlas::create(scoreString, "res/numbers.png", 68, 110, '0');
     scoreNumber->setPosition(Vec2(this->visibleSize.width * 0.91, this->visibleSize.height * 0.925));
     scoreNumber->setScale(0.3,0.3);
     this->addChild(scoreNumber);
@@ -81,7 +82,38 @@ void StatusLayer::gamePlay(int score){
     
 }
 
-void StatusLayer::gameOver(int currentScore, int bestScore){
+void StatusLayer::gameOver(int bestScore){
+    
+    Sprite * gameOverBoard;
+    gameOverBoard = Sprite::create("res/gameover.png");
+    gameOverBoard->setScale(0.55, 0.55);
+    gameOverBoard->setPosition(Vec2(visibleSize.width/2, visibleSize.height/2));
+    this->addChild(gameOverBoard);
+    
+    LabelAtlas * finalScore = LabelAtlas::create(scoreString, "res/numbers.png", 68, 110, '0');
+    finalScore->setPosition(Vec2(this->visibleSize.width * 0.46, this->visibleSize.height * 0.44));
+    finalScore->setScale(0.9,0.9);
+    
+    this->addChild(finalScore);
+    
+    this->addReplayButton();
+}
+
+
+void StatusLayer::replayButtonCallBack(Ref *sender){
+    auto playScene = PlayScene::create();
+    TransitionScene * transScene = TransitionFade::create(1, playScene);
+    Director::getInstance()->replaceScene(transScene);
+    
+}
+
+void StatusLayer::addReplayButton(){
+    MenuItemImage * replayMenu = MenuItemImage::create("res/replay_button.png", "res/replay_button_press.png", CC_CALLBACK_1(StatusLayer::replayButtonCallBack, this));
+    replayMenu->setScale(0.3);
+    
+    auto menu = Menu::create(replayMenu, NULL);
+    menu->setPosition(Vec2(this->visibleSize.width * 0.38, this->visibleSize.height*0.35));
+    this->addChild(menu);
     
 }
 

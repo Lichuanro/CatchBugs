@@ -42,6 +42,13 @@ void SceneManager::gotoPlayScene(){
     
 }
 
+void SceneManager::replay(){
+    playScene->restart();
+    playScene = PlayScene::create();
+    
+    Director::getInstance()->replaceScene(playScene);
+}
+
 void SceneManager::gotoEndScene(){
     
 }
