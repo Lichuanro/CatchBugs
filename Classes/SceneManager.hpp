@@ -13,7 +13,6 @@
 #include "cocos2d.h"
 #include "OpenScene.hpp"
 #include "PlayScene.hpp"
-#include "EndScene.hpp"
 
 USING_NS_CC;
 

@@ -21,8 +21,6 @@
 		14E7FECE1CDE500D00BDACEB /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 14E7FEC91CDE348500BDACEB /* Images.xcassets */; };
 		14E7FED11CDE51F700BDACEB /* PlayScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 14E7FECF1CDE51F700BDACEB /* PlayScene.cpp */; };
 		14E7FED21CDE51F700BDACEB /* PlayScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 14E7FECF1CDE51F700BDACEB /* PlayScene.cpp */; };
-		14E7FED61CDE52A600BDACEB /* EndScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 14E7FED41CDE52A600BDACEB /* EndScene.cpp */; };
-		14E7FED71CDE52A600BDACEB /* EndScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 14E7FED41CDE52A600BDACEB /* EndScene.cpp */; };
 		14E7FEDA1CDF765A00BDACEB /* SceneManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 14E7FED81CDF765A00BDACEB /* SceneManager.cpp */; };
 		14E7FEDB1CDF765A00BDACEB /* SceneManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 14E7FED81CDF765A00BDACEB /* SceneManager.cpp */; };
 		14E7FEDE1CDF80DB00BDACEB /* OpenScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 14E7FEDC1CDF80DB00BDACEB /* OpenScene.cpp */; };
@@ -96,8 +94,6 @@
 		14E7FEC91CDE348500BDACEB /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = "CatchBugs-mobile/Images.xcassets"; sourceTree = SOURCE_ROOT; };
 		14E7FECF1CDE51F700BDACEB /* PlayScene.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = PlayScene.cpp; sourceTree = "<group>"; };
 		14E7FED01CDE51F700BDACEB /* PlayScene.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = PlayScene.hpp; sourceTree = "<group>"; };
-		14E7FED41CDE52A600BDACEB /* EndScene.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = EndScene.cpp; sourceTree = "<group>"; };
-		14E7FED51CDE52A600BDACEB /* EndScene.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = EndScene.hpp; sourceTree = "<group>"; };
 		14E7FED81CDF765A00BDACEB /* SceneManager.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = SceneManager.cpp; sourceTree = "<group>"; };
 		14E7FED91CDF765A00BDACEB /* SceneManager.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = SceneManager.hpp; sourceTree = "<group>"; };
 		14E7FEDC1CDF80DB00BDACEB /* OpenScene.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = OpenScene.cpp; sourceTree = "<group>"; };
@@ -287,8 +283,6 @@
 				14E7FEDD1CDF80DB00BDACEB /* OpenScene.hpp */,
 				14E7FECF1CDE51F700BDACEB /* PlayScene.cpp */,
 				14E7FED01CDE51F700BDACEB /* PlayScene.hpp */,
-				14E7FED41CDE52A600BDACEB /* EndScene.cpp */,
-				14E7FED51CDE52A600BDACEB /* EndScene.hpp */,
 				14CBBDC61CE229C20096F944 /* Bird.cpp */,
 				14CBBDC71CE229C20096F944 /* Bird.hpp */,
 				14CBBDCA1CE614DF0096F944 /* GameLayer.cpp */,
@@ -486,7 +480,6 @@
 				14E7FEDE1CDF80DB00BDACEB /* OpenScene.cpp in Sources */,
 				14CBBDCC1CE614DF0096F944 /* GameLayer.cpp in Sources */,
 				503AE10017EB989F00D1A890 /* AppController.mm in Sources */,
-				14E7FED61CDE52A600BDACEB /* EndScene.cpp in Sources */,
 				14CBBDD41CE8B29C0096F944 /* StatusLayer.cpp in Sources */,
 				503AE10217EB989F00D1A890 /* RootViewController.mm in Sources */,
 				503AE10117EB989F00D1A890 /* main.m in Sources */,
@@ -497,7 +490,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				14E7FED71CDE52A600BDACEB /* EndScene.cpp in Sources */,
 				46880B8919C43A87006E1F66 /* AppDelegate.cpp in Sources */,
 				14E7FEDB1CDF765A00BDACEB /* SceneManager.cpp in Sources */,
 				14E7FEDF1CDF80DB00BDACEB /* OpenScene.cpp in Sources */,

@@ -68,7 +68,7 @@ private:
     
     void moveTrees(float dt);
     
-    void checkCollide();
+    void createGround();
     
     void birdFadeOut();
     

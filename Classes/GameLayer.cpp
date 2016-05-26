@@ -34,6 +34,7 @@ bool GameLayer::init(){
         bird->ready();
         
         this->createTrees();
+        this->createGround();
         
         moveAllTrees = schedule_selector(GameLayer::moveTrees);
         
@@ -189,7 +190,6 @@ void GameLayer::createTrees(){
     this->addChild(treeM);
     this->addChild(treeS);
 
-    
 }
 
 void GameLayer::moveTrees(float dt){
@@ -220,8 +220,19 @@ void GameLayer::moveTrees(float dt){
     
 }
 
-void GameLayer::checkCollide(){
-    
+void GameLayer::createGround(){
+
+    auto groundBody = PhysicsBody::create();
+    auto shape = PhysicsShapeEdgeSegment::create(Vec2(0,0), Vec2(visibleSize.width,0));
+    groundBody->addShape(shape);
+    groundBody->setDynamic(false);
+    Sprite * ground = Sprite::create("res/ground.png");
+    ground->setScale(2.54,0.55);
+    ground->setPhysicsBody(groundBody);
+    ground->getPhysicsBody()->setCollisionBitmask(1);
+    ground->getPhysicsBody()->setCategoryBitmask(1);
+    ground->getPhysicsBody()->setContactTestBitmask(1);
+    this->addChild(ground);
     
 }
 
