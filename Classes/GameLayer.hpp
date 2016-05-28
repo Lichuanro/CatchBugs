@@ -12,6 +12,7 @@
 #include "cocos2d.h"
 #include "Bird.hpp"
 #include "Bug.hpp"
+#include "Tree.hpp"
 #include "ControlLayer.hpp"
 #include "SimpleAudioEngine.h"
 #include <cstdlib>
@@ -21,12 +22,9 @@ using namespace CocosDenshion;
 typedef enum game_Status {
     GAME_READY = 1,
     GAME_START,
-    GAME_REPLAY,
     GAME_OVER
 }GameStatus;
 
-#define min(x,y) ((x)<(y) ? (x) : (y))
-#define max(x,y) ((x)>(y) ? (x) : (y))
 
 class StatusDelegate{
     
@@ -64,10 +62,6 @@ private:
     
     void rotateBird();
     
-    void createTrees();
-    
-    void moveTrees(float dt);
-    
     void createGround();
     
     void birdFadeOut();
@@ -89,14 +83,8 @@ private:
     
     Bird * bird;
     BugManager * bugManager;
-    
-    Sprite * treeL;
-    Sprite * treeM;
-    Sprite * treeS;
-    
-    
-    SEL_SCHEDULE moveAllTrees;
-    
+    TreeManager * treeManager;
+
 };
 
 
