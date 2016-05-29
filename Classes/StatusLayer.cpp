@@ -54,9 +54,11 @@ void StatusLayer::showStart(){
 }
 
 
-void StatusLayer::showOver(int best){
-    
-
+void StatusLayer::backgroundBlur(){
+    Sprite * backgroundEnd = Sprite::create("res/background_end.png");
+    backgroundEnd->setPosition(Vec2(visibleSize.width/2,visibleSize.height/2));
+    backgroundEnd->setScale(0.8, 0.9);
+    this->addChild(backgroundEnd);
     
 }
 
@@ -83,6 +85,8 @@ void StatusLayer::gamePlay(int score){
 }
 
 void StatusLayer::gameOver(int bestScore){
+    
+    backgroundBlur();
     
     Sprite * gameOverBoard;
     gameOverBoard = Sprite::create("res/gameover.png");

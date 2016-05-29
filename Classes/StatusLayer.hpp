@@ -36,7 +36,7 @@ public:
 private:
     void showReady();
     void showStart();
-    void showOver(int best);
+    void backgroundBlur();
     
     
     void fadeInGameOver();
