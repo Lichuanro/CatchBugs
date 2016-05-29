@@ -68,6 +68,10 @@ private:
     
     void birdRemove();
     
+    void addBranch();
+    
+    void removeBranch();
+    
     bool onContactBegin(const cocos2d::PhysicsContact &contact);
     
     void gameOver();
@@ -84,6 +88,7 @@ private:
     Bird * bird;
     BugManager * bugManager;
     TreeManager * treeManager;
+    Sprite * branch;
 
 };
 

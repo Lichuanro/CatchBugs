@@ -35,6 +35,8 @@ bool GameLayer::init(){
         
         this->createGround();
         
+        this->addBranch();
+        
         this->scheduleUpdate();
         
         auto contactListener = EventListenerPhysicsContact::create();
@@ -86,6 +88,8 @@ void GameLayer::onTouch(){
     if (this->gameStatus == GAME_READY) {
         this->delegator->gameStart();
         this->bird->fly();
+        
+        this->removeBranch();
         
         bugManager = BugManager::create();
         this->addChild(bugManager);
@@ -168,4 +172,14 @@ void GameLayer::birdRemove(){
     this->removeChild(this->bird);
 }
 
+void GameLayer::addBranch(){
+    branch = Sprite::create("res/branch.png");
+    branch->setAnchorPoint(Vec2(0,0.5));
+    branch->setScale(0.45, 0.4);
+    branch->setPosition(Vec2(0,visibleSize.height*0.46));
+    this->addChild(branch);
+}
 
+void GameLayer::removeBranch(){
+    this->removeChild(branch);
+}
