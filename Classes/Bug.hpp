@@ -52,7 +52,7 @@ public:
     void resetBug(int tag);
     
 private:
-    void createBug();
+    void createBugs();
     
     Vector<Bug*> bugs;
 };

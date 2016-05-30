@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		145FF7891CF893E50085537D /* Tree.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 145FF7871CF893E50085537D /* Tree.cpp */; };
+		145FF78A1CF893E50085537D /* Tree.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 145FF7871CF893E50085537D /* Tree.cpp */; };
 		14CBBDC81CE229C20096F944 /* Bird.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 14CBBDC61CE229C20096F944 /* Bird.cpp */; };
 		14CBBDC91CE229C20096F944 /* Bird.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 14CBBDC61CE229C20096F944 /* Bird.cpp */; };
 		14CBBDCC1CE614DF0096F944 /* GameLayer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 14CBBDCA1CE614DF0096F944 /* GameLayer.cpp */; };
@@ -81,6 +83,8 @@
 
 /* Begin PBXFileReference section */
 		01F741B993AED8B544209AD5 /* res */ = {isa = PBXFileReference; lastKnownFileType = "?"; name = res; path = ../Resources/res; sourceTree = "<group>"; };
+		145FF7871CF893E50085537D /* Tree.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Tree.cpp; sourceTree = "<group>"; };
+		145FF7881CF893E50085537D /* Tree.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Tree.hpp; sourceTree = "<group>"; };
 		14CBBDC61CE229C20096F944 /* Bird.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Bird.cpp; sourceTree = "<group>"; };
 		14CBBDC71CE229C20096F944 /* Bird.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Bird.hpp; sourceTree = "<group>"; };
 		14CBBDCA1CE614DF0096F944 /* GameLayer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = GameLayer.cpp; sourceTree = "<group>"; };
@@ -293,6 +297,8 @@
 				14CBBDD31CE8B29C0096F944 /* StatusLayer.hpp */,
 				14CBBDD61CEF492A0096F944 /* Bug.cpp */,
 				14CBBDD71CEF492A0096F944 /* Bug.hpp */,
+				145FF7871CF893E50085537D /* Tree.cpp */,
+				145FF7881CF893E50085537D /* Tree.hpp */,
 			);
 			name = Classes;
 			path = ../Classes;
@@ -479,6 +485,7 @@
 				14E7FEDA1CDF765A00BDACEB /* SceneManager.cpp in Sources */,
 				14E7FEDE1CDF80DB00BDACEB /* OpenScene.cpp in Sources */,
 				14CBBDCC1CE614DF0096F944 /* GameLayer.cpp in Sources */,
+				145FF7891CF893E50085537D /* Tree.cpp in Sources */,
 				503AE10017EB989F00D1A890 /* AppController.mm in Sources */,
 				14CBBDD41CE8B29C0096F944 /* StatusLayer.cpp in Sources */,
 				503AE10217EB989F00D1A890 /* RootViewController.mm in Sources */,
@@ -499,6 +506,7 @@
 				14CBBDD11CE618BB0096F944 /* ControlLayer.cpp in Sources */,
 				14CBBDCD1CE614DF0096F944 /* GameLayer.cpp in Sources */,
 				14CBBDC91CE229C20096F944 /* Bird.cpp in Sources */,
+				145FF78A1CF893E50085537D /* Tree.cpp in Sources */,
 				14E7FED21CDE51F700BDACEB /* PlayScene.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

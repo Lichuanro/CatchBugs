@@ -12,7 +12,6 @@
 USING_NS_CC;
 
 bool Bird::init(){
-    createdAlready = false;
     return true;
 }
 
@@ -68,7 +67,7 @@ void Bird::createBird(){
     Animation * readyAnimation = Animation::create();
     readyAnimation->addSpriteFrameWithFile("res/bird1.png");
     readyAnimation->addSpriteFrameWithFile("res/bird2.png");
-    readyAnimation->setDelayPerUnit(0.15);
+    readyAnimation->setDelayPerUnit(0.2);
     readyAnimation->setRestoreOriginalFrame(true);
     readyAnimation->setLoops(-1);
     
@@ -80,12 +79,12 @@ void Bird::createBird(){
     flyAnimation->addSpriteFrameWithFile("res/bird1.png");
     flyAnimation->addSpriteFrameWithFile("res/bird2.png");
     
-    flyAnimation->setDelayPerUnit(0.2);
+    flyAnimation->setDelayPerUnit(0.15);
     flyAnimation->setRestoreOriginalFrame(true);
-    flyAnimation->setLoops(2);
+    flyAnimation->setLoops(-1);
     this->flyAction = Animate::create(flyAnimation);
     
-    ActionInterval * up = MoveBy::create(0.4f, Point(0,8));
+    ActionInterval * up = MoveBy::create(0.5f, Point(0,5));
     ActionInterval * down = up->reverse();
     
     this->moveAction = RepeatForever::create(Sequence::create(up,down, NULL));
@@ -115,7 +114,7 @@ void Bird::ready(){
 void Bird::fly(){
     changeState(FLY_ACTION);
     bird->getPhysicsBody()->setGravityEnable(true);
-    
+
 }
 
 void Bird::swing(){
@@ -135,6 +134,7 @@ void Bird::catchBugs(){
 void Bird::die(){
     changeState(DIE_ACTION);
     bird->stopAllActions();
+    bird->getPhysicsBody()->setEnabled(false);
     
 }
 

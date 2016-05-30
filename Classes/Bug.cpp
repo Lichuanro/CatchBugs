@@ -67,7 +67,7 @@ void Bug::moveWithScene(){
 
 void Bug::reset(){
     Size winSize = Director::getInstance()->getWinSize();
-    bug->setPosition(Vec2(winSize.width * random(1.1, 1.8),winSize.height * random(0.3, 0.8)));
+    bug->setPosition(Vec2(winSize.width * random(1.1, 1.8),winSize.height * random(0.15, 0.8)));
 }
 
 bool Bug::checkEaten(){
@@ -81,12 +81,12 @@ void Bug::setBugTag(int tag){
 
 bool BugManager::init(){
     
-    createBug();
+    createBugs();
     this->scheduleUpdate();
     return true;
 }
 
-void BugManager::createBug(){
+void BugManager::createBugs(){
     Bug * bug = NULL;
     for (int i = 0; i < MAX_BUGS; i++) {
         bug = new Bug;

@@ -19,6 +19,8 @@ USING_NS_CC;
 
 class SceneManager;
 
+static int bestScore;
+
 class StatusLayer:public Layer, public StatusDelegate{
   
 public:
@@ -55,14 +57,10 @@ private:
     
     void endButtonCallBack(Ref *sender);
 
-    
+    Sprite * click;
     Sprite * count3;
     Sprite * count2;
     Sprite * count1;
-    Sprite * score;
-    
-    
-    int bestScore;
     
     bool isNewRecord;
     
@@ -71,7 +69,10 @@ private:
     Size visibleSize;
     
     LabelAtlas * scoreNumber;
+    LabelAtlas * bestScoreNumber;
+    
     char scoreString[4];
+    char bestScoreString[4];
     
     
 };

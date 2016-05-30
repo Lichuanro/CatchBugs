@@ -47,8 +47,6 @@ public:
 private:
     static Bird * shareBird;
     Sprite * bird;
-
-    bool createdAlready;
     
     bool changeState(ActionState actionState);
     
