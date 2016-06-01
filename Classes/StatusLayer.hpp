@@ -34,28 +34,28 @@ public:
     virtual void gameStart(void);
     virtual void gamePlay(int score);
     virtual void gameOver(int bestScore);
-    
+    virtual void setGamelayer(GameLayer * layer);
 private:
     void showReady();
     void showStart();
+    void showPause();
     void backgroundBlur();
-    
-    
-    void fadeInGameOver();
-    
-    void jumpToScorePanel();
     
     void addReplayButton();
     
     void addEndButton();
     
-    void refreshScoreCallback();
+    void addGamePauseButton();
     
-    void refreshScoreExecutor(float dt);
+    void addGameResumeButton();
     
     void replayButtonCallBack(Ref *sender);
     
     void endButtonCallBack(Ref *sender);
+    
+    void gamePauseButtonCallBack(Ref *sender);
+    
+    void gameResumeButtonCallBack(Ref *sender);
 
     Sprite * click;
     Sprite * count3;
@@ -74,7 +74,7 @@ private:
     char scoreString[4];
     char bestScoreString[4];
     
-    
+    GameLayer * gamelayer;
 };
 
 #endif /* StatusLayer_hpp */

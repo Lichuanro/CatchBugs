@@ -99,6 +99,7 @@ void GameLayer::onTouch(){
         
         this->gameStatus = GAME_START;
         this->delegator->gamePlay(score);
+        this->delegator->setGamelayer(this);
     }
     
     else if (this->gameStatus == GAME_START){
@@ -182,4 +183,15 @@ void GameLayer::addBranch(){
 
 void GameLayer::removeBranch(){
     this->removeChild(branch);
+}
+
+
+void GameLayer::gamePause(){
+    Director::getInstance()->pause();
+    bird->pause();
+}
+
+void GameLayer::gameResume(){
+    Director::getInstance()->resume();
+    bird->resume();
 }

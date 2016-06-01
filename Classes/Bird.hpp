@@ -43,7 +43,8 @@ public:
     void setVelocity();
     void setPosX();
     void rotateBird();
-    
+    void pause();
+    void resume();
 private:
     static Bird * shareBird;
     Sprite * bird;

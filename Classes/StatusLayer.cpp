@@ -23,9 +23,9 @@ bool StatusLayer::init(){
     this->originPoint = Director::getInstance()->getVisibleOrigin();
 
     isNewRecord = false;
-    
+
     this->showReady();
-    
+
     return true;
     
 }
@@ -59,10 +59,11 @@ void StatusLayer::showStart(){
 
 
 void StatusLayer::backgroundBlur(){
-    Sprite * backgroundEnd = Sprite::create("res/background_end.png");
-    backgroundEnd->setPosition(Vec2(visibleSize.width/2,visibleSize.height/2));
-    backgroundEnd->setScale(0.8, 0.9);
-    this->addChild(backgroundEnd);
+    Sprite * blur = Sprite::create("res/background_end.png");
+    blur->setTag(1001);
+    blur->setPosition(Vec2(visibleSize.width/2,visibleSize.height/2));
+    blur->setScale(0.8, 0.9);
+    this->addChild(blur);
     
 }
 
@@ -91,6 +92,8 @@ void StatusLayer::gameStart(){
     this->addChild(bestScoreNumber);
     
     this->showStart();
+    
+    this->addGamePauseButton();
 }
 
 void StatusLayer::gamePlay(int score){
@@ -111,7 +114,7 @@ void StatusLayer::gamePlay(int score){
 void StatusLayer::gameOver(int bestScore){
     
     backgroundBlur();
-    
+    this->removeChildByTag(1004);
     Sprite * gameOverBoard;
     gameOverBoard = Sprite::create("res/gameover.png");
     gameOverBoard->setScale(0.55, 0.55);
@@ -159,12 +162,12 @@ void StatusLayer::replayButtonCallBack(Ref *sender){
 }
 
 void StatusLayer::addReplayButton(){
-    MenuItemImage * replayMenu = MenuItemImage::create("res/replay_button.png", "res/replay_button_press.png", CC_CALLBACK_1(StatusLayer::replayButtonCallBack, this));
-    replayMenu->setScale(0.3);
+    MenuItemImage * replay = MenuItemImage::create("res/replay_button.png", "res/replay_button_press.png", CC_CALLBACK_1(StatusLayer::replayButtonCallBack, this));
+    replay->setScale(0.3);
     
-    auto menu = Menu::create(replayMenu, NULL);
-    menu->setPosition(Vec2(this->visibleSize.width * 0.38, this->visibleSize.height*0.35));
-    this->addChild(menu);
+    auto replayButton = Menu::create(replay, NULL);
+    replayButton->setPosition(Vec2(this->visibleSize.width * 0.38, this->visibleSize.height*0.35));
+    this->addChild(replayButton);
     
 }
 
@@ -174,12 +177,64 @@ void StatusLayer::endButtonCallBack(Ref *sender){
 }
 
 void StatusLayer::addEndButton(){
-    MenuItemImage * endMenu = MenuItemImage::create("res/end_button.png", "res/end_button_press.png", CC_CALLBACK_1(StatusLayer::endButtonCallBack, this));
-    endMenu->setScale(0.3);
+    MenuItemImage * end = MenuItemImage::create("res/end_button.png", "res/end_button_press.png", CC_CALLBACK_1(StatusLayer::endButtonCallBack, this));
+    end->setScale(0.3);
     
-    auto menu = Menu::create(endMenu,NULL);
-    menu->setPosition(Vec2(this->visibleSize.width * 0.62, this->visibleSize.height*0.35));
-    this->addChild(menu);
+    auto endButton = Menu::create(end,NULL);
+    endButton->setPosition(Vec2(this->visibleSize.width * 0.62, this->visibleSize.height*0.35));
+    this->addChild(endButton);
 
 }
 
+void StatusLayer::addGamePauseButton(){
+    MenuItemImage * pause = MenuItemImage::create("res/pause_button.png", "res/pause_button_press.png", CC_CALLBACK_1(StatusLayer::gamePauseButtonCallBack,this));
+    pause->setScale(0.15,0.15);
+    
+    auto pauseButton = Menu::create(pause, NULL);
+    pauseButton->setTag(1004);
+    pauseButton->setPosition(Vec2(visibleSize.width * 0.77, visibleSize.height * 0.93));
+    this->addChild(pauseButton);
+}
+
+void StatusLayer::setGamelayer(GameLayer *layer){
+    this->gamelayer = layer;
+}
+
+void StatusLayer::gamePauseButtonCallBack(cocos2d::Ref *sender){
+    Director::getInstance()->pause();
+    gamelayer->gamePause();
+    backgroundBlur();
+    
+    this->showPause();
+    this->addGameResumeButton();
+}
+
+void StatusLayer::addGameResumeButton(){
+    MenuItemImage * resume = MenuItemImage::create("res/resume_button.png", "res/resume_button_press.png", CC_CALLBACK_1(StatusLayer::gameResumeButtonCallBack, this));
+    resume->setScale(0.35, 0.35);
+    
+    auto resumeButton = Menu::create(resume, NULL);
+    resumeButton->setTag(1003);
+    resumeButton->setPosition(Vec2(visibleSize.width/2,visibleSize.height * 0.44));
+    this->addChild(resumeButton);
+    
+}
+
+void StatusLayer::gameResumeButtonCallBack(cocos2d::Ref *sender){
+    Director::getInstance()->resume();
+    gamelayer->gameResume();
+    this->removeChildByTag(1001);
+    this->removeChildByTag(1002);
+    this->removeChildByTag(1003);
+
+}
+
+void StatusLayer::showPause(){
+    Sprite * pauseBoard  = Sprite::create("res/pause.png");
+    pauseBoard->setTag(1002);
+    pauseBoard->setScale(0.5, 0.5);
+    pauseBoard->setAnchorPoint(Vec2(0.5,0.5));
+    pauseBoard->setPosition(Vec2(visibleSize.width/2,visibleSize.height * 0.5));
+    
+    this->addChild(pauseBoard);
+}

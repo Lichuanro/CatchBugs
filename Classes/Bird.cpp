@@ -152,3 +152,10 @@ void Bird::rotateBird(){
     
 }
 
+void Bird::pause(){
+    bird->getPhysicsBody()->setEnabled(false);
+}
+
+void Bird::resume(){
+    bird->getPhysicsBody()->setEnabled(true);
+}

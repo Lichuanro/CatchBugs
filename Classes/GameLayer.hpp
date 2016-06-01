@@ -25,14 +25,14 @@ typedef enum game_Status {
     GAME_OVER
 }GameStatus;
 
-
+class GameLayer;
 class StatusDelegate{
     
 public:
     virtual void gameStart(void) = 0;
     
     virtual void gamePlay(int score) = 0;
-    
+    virtual void setGamelayer(GameLayer * gamelayer) = 0;
     virtual void gameOver(int bestScore) = 0;
     
 };
@@ -57,6 +57,8 @@ public:
     
     void update(float delta);
     
+    void gamePause();
+    void gameResume();
     
 private:
     
