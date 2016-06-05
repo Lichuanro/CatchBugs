@@ -13,6 +13,7 @@
 #include "Bird.hpp"
 #include "Bug.hpp"
 #include "Tree.hpp"
+#include "Rain.hpp"
 #include "ControlLayer.hpp"
 #include "SimpleAudioEngine.h"
 #include <cstdlib>
@@ -91,6 +92,7 @@ private:
     BugManager * bugManager;
     TreeManager * treeManager;
     Sprite * branch;
+    Rain * rain;
 
 };
 

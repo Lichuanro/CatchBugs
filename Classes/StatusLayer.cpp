@@ -127,7 +127,7 @@ void StatusLayer::gameOver(int bestScore){
     finalScoreNumber->setScale(0.9,0.9);
     if (isNewRecord) {
         Sprite * newRecord = Sprite::create("res/new_record.png");
-        newRecord->setPosition(Vec2(visibleSize.width * 0.66, visibleSize.height * 0.48));
+        newRecord->setPosition(Vec2(visibleSize.width * 0.7, visibleSize.height * 0.48));
         newRecord->setScale(0.4, 0.4);
         newRecord->setRotation(30);
         this->addChild(newRecord);
