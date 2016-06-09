@@ -67,10 +67,6 @@ private:
     
     void createGround();
     
-    void birdFadeOut();
-    
-    void birdRemove();
-    
     void addBranch();
     
     void removeBranch();

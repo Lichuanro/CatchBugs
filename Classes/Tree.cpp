@@ -116,13 +116,9 @@ void Tree::createTrees(){
     addChild(treeS);
     
     trees.pushBack(treeS);
-    log("push s");
     trees.pushBack(treeM);
-    log("push m");
     trees.pushBack(treeL);
-    log("push l");
     trees.pushBack(treeXL);
-    log("push xl");
 }
 
 
@@ -196,7 +192,7 @@ bool TreeManager::init(){
     createTreesVec();
     setRandomTree();
     addTrees();
-    log("init");
+
     this->scheduleUpdate();
     return true;
 }
@@ -250,7 +246,6 @@ void TreeManager::resetTree(){
     if (randomTree1->getPositionX() < 0) {
         this->removeChild(randomTree1);
         randomTree1 = trees1Vec.at(random(0, 3));
-        log("random1");
         if (randomTree1->getPositionX() > visibleSize.width) {
             this->addChild(randomTree1);
         }
@@ -280,7 +275,6 @@ void TreeManager::resetTree(){
     if (randomTree2->getPositionX() < 0) {
         this->removeChild(randomTree2);
         randomTree2 = trees2Vec.at(random(0, 3));
-        log("random2");
         if (randomTree2->getPositionX() > visibleSize.width) {
             this->addChild(randomTree2);
         }
@@ -310,7 +304,6 @@ void TreeManager::resetTree(){
     if (randomTree3->getPositionX() < 0) {
         this->removeChild(randomTree3);
         randomTree3 = trees3Vec.at(random(0, 3));
-        log("random3");
         if (randomTree3->getPositionX() > visibleSize.width) {
             this->addChild(randomTree3);
         }

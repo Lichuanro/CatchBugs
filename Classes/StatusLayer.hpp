@@ -58,9 +58,6 @@ private:
     void gameResumeButtonCallBack(Ref *sender);
 
     Sprite * click;
-    Sprite * count3;
-    Sprite * count2;
-    Sprite * count1;
     
     bool isNewRecord;
     

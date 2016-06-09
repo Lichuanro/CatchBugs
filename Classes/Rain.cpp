@@ -53,11 +53,16 @@ void Rain::addRainSymbol(){
     
     this->addChild(rainSymbol);
     rainSymbolAdded = true;
+    
+    SimpleAudioEngine::getInstance()->playEffect("res/rain.wav", true);
+    
 }
 
 void Rain::removeRainSymbol(){
     this->removeChild(rainSymbol);
     rainSymbolAdded = false;
+    
+    SimpleAudioEngine::getInstance()->stopAllEffects();
 }
 
 void Rain::startRain(float dt){
@@ -108,12 +113,14 @@ void Rain::pause(){
     for (auto rainDrop : rains) {
         rainDrop->getPhysicsBody()->setEnabled(false);
     }
+    SimpleAudioEngine::getInstance()->pauseAllEffects();
 }
 
 void Rain::resume(){
     for (auto rainDrop : rains) {
         rainDrop->getPhysicsBody()->setEnabled(true);
     }
+    SimpleAudioEngine::getInstance()->resumeAllEffects();
 }
 
 

@@ -48,7 +48,6 @@ void Bird::createBird(){
     
     bird = Sprite::create("res/bird1.png");
     Size winSize = Director::getInstance()->getWinSize();
- //   bird->setPosition(Vec2(winSize.width/2, winSize.height/2));
     bird->setScale(0.07, 0.07);
     
     PhysicsBody * body = PhysicsBody::create();
@@ -117,17 +116,9 @@ void Bird::fly(){
 
 }
 
-void Bird::swing(){
-    changeState(SWING_ACTION);
- //   this->stopAllActions();
- //   this->runAction(flyAction);
- //   this->runAction(moveAction);
-    
-}
-
 void Bird::catchBugs(){
     changeState(CATCHBUGS_ACTION);
- //   this->runAction(catchBugAction);
+    SimpleAudioEngine::getInstance()->playEffect("res/chirp.wav");
     
 }
 

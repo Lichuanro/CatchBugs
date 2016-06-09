@@ -12,7 +12,8 @@
 #include <iostream>
 #include <string>
 #include "cocos2d.h"
-
+#include "SimpleAudioEngine.h"
+using namespace CocosDenshion;
 USING_NS_CC;
 
 typedef enum action_State{

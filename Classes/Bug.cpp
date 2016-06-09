@@ -116,7 +116,6 @@ void BugManager::update(float dt){
 
 void BugManager::resetBug(int tag){
     bugs.at(tag-3)->caught();
-    log("caught");
 }
 
 

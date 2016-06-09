@@ -37,6 +37,9 @@ bool GameLayer::init(){
         
         this->addBranch();
         
+        this->rain = Rain::create();
+        this->addChild(rain);
+        
         this->scheduleUpdate();
         
         auto contactListener = EventListenerPhysicsContact::create();
@@ -84,18 +87,21 @@ void GameLayer::onTouch(){
     if (this->gameStatus == GAME_OVER) {
         return;
     }
-//    SimpleAudioEngine::getInstance()->playEffect(<#const char *filePath#>);
     if (this->gameStatus == GAME_READY) {
         this->delegator->gameStart();
         this->bird->fly();
-        
+
+        SimpleAudioEngine::getInstance()->playEffect("res/start.wav");
+
         this->removeBranch();
-        
+
         bugManager = BugManager::create();
         this->addChild(bugManager);
         
         treeManager = TreeManager::create();
         this->addChild(treeManager);
+        
+        this->rain->rainAtRandom();
         
         this->gameStatus = GAME_START;
         this->delegator->gamePlay(score);
@@ -148,10 +154,9 @@ void GameLayer::gameOver(){
  //   SimpleAudioEngine::getInstance()->playEffect(<#const char *filePath#>);
     this->bird->die();
     this->bird->setRotation(-90);
-//    this->birdFadeOut();
-//    this->birdRemove();
     this->bugManager->unscheduleUpdate();
     this->treeManager->unscheduleUpdate();
+    this->rain->pause();
     
     this->delegator->gameOver(0);
     
@@ -159,19 +164,6 @@ void GameLayer::gameOver(){
     this->gameStatus = GAME_OVER;
 }
 
-
-void GameLayer::birdFadeOut(){
-    FadeOut* animation = FadeOut::create(1.5);
-    CallFunc* animationDone = CallFunc::create(std::bind(&GameLayer::birdRemove,this));
-    Sequence* sequence = Sequence::createWithTwoActions(animation, animationDone);
-    this->bird->stopAllActions();
-    this->bird->runAction(sequence);
-}
-
-void GameLayer::birdRemove(){
-    this->bird->setRotation(0);
-    this->removeChild(this->bird);
-}
 
 void GameLayer::addBranch(){
     branch = Sprite::create("res/branch.png");
@@ -185,13 +177,14 @@ void GameLayer::removeBranch(){
     this->removeChild(branch);
 }
 
-
 void GameLayer::gamePause(){
     Director::getInstance()->pause();
     bird->pause();
+    rain->pause();
 }
 
 void GameLayer::gameResume(){
     Director::getInstance()->resume();
     bird->resume();
+    rain->resume();
 }

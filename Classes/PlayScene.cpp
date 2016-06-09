@@ -42,7 +42,6 @@ PlayScene::~PlayScene(){
 bool PlayScene::init(){
     if (Scene::initWithPhysics()) {
         this->getPhysicsWorld()->setGravity(Vec2(0,-900));
- //       this->getPhysicsWorld()->setDebugDrawMask(PhysicsWorld::DEBUGDRAW_ALL);
         playLayer = PlayLayer::create();
         this->addChild(playLayer);
         
@@ -68,9 +67,4 @@ bool PlayScene::init(){
     }
     else
         return false;
-}
-
-void PlayScene::restart(){
-    this->removeAllChildrenWithCleanup(true);
-//    this->init();
 }
