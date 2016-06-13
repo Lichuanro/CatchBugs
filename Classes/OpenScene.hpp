@@ -21,10 +21,12 @@ class OpenLayer:public Layer{
 public:
     CREATE_FUNC(OpenLayer);
     virtual bool init();
-    void menuCallBack(Ref *pSender);
+    void menuCallBack(Ref *sender);
+    void copyrightCallBack(Ref *sender);
     
 public:
     SceneManager * tsm;
+    Size winSize;
 };
 
 

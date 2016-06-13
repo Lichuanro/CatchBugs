@@ -13,7 +13,7 @@ USING_NS_TIMELINE;
 
 bool OpenLayer::init(){
     
-    Size winSize = Director::getInstance()->getWinSize();
+    winSize = Director::getInstance()->getWinSize();
     
     auto rootNode = CSLoader::createNode("MainScene.csb");
     
@@ -33,11 +33,29 @@ bool OpenLayer::init(){
     auto menu = Menu::create(playMenu, NULL);
     this->addChild(menu);
     
+    MenuItemImage * copyrightMenu = MenuItemImage::create("res/copyright_button.png", "res/copyright_button_press.png", CC_CALLBACK_1(OpenLayer::copyrightCallBack, this));
+    copyrightMenu->setScale(0.2);
+    
+    auto copyButton = Menu::create(copyrightMenu, NULL);
+    copyButton->setPosition(Vec2(winSize.width * 0.04, winSize.height * 0.06));
+    this->addChild(copyButton);
     
     return true;
     
 }
 
-void OpenLayer::menuCallBack(cocos2d::Ref *pSender){
+void OpenLayer::menuCallBack(cocos2d::Ref *sender){
     tsm->gotoPlayScene();
+}
+
+void OpenLayer::copyrightCallBack(cocos2d::Ref *sender){
+    Sprite * copyrightText = Sprite::create("res/copyright_text.png");
+    copyrightText->setPosition(Vec2(winSize.width * 0.2, winSize.height * 0.15));
+    copyrightText->setScale(0.3, 0.3);
+    copyrightText->setTag(1005);
+    if (this->getChildByTag(1005)) {
+        this->removeChildByTag(1005);
+    }
+    else
+        this->addChild(copyrightText);
 }
