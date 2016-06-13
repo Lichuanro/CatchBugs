@@ -6,6 +6,14 @@
 //
 //
 
+/**
+ the class for trees
+ creates 4 different sizes of trees to make the game more challenging
+ tree manager control all the trees added to the scene
+ actually only 3 or less trees are shown at the same time
+ trees are created at random, both the size and the position
+ */
+
 #ifndef Tree_hpp
 #define Tree_hpp
 
@@ -61,6 +69,7 @@ private:
     Tree * trees1;
     Tree * trees2;
     Tree * trees3;
+    
     Vector<Sprite*> trees1Vec;
     Vector<Sprite*> trees2Vec;
     Vector<Sprite*> trees3Vec;

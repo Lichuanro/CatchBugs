@@ -6,6 +6,12 @@
 //
 //
 
+/**
+ raining is to make the game more challenging
+ it will rain at random while playing the game
+ a rain symbol will show at the upper left corner of the scene when it's going to rain
+ */
+
 #ifndef Rain_hpp
 #define Rain_hpp
 

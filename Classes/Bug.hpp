@@ -6,6 +6,14 @@
 //
 //
 
+/**
+ the class for bugs
+ bug class controls every single bug
+ bug manager class controls all the bugs which are added to the scene
+ the maximun bugs number is defined below
+ bugs are shown at random
+ */
+
 #ifndef Bug_hpp
 #define Bug_hpp
 

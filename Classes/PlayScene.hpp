@@ -6,6 +6,10 @@
 //
 //
 
+/**
+ put all layers together to make this scene
+ */
+
 #ifndef PlayScene_hpp
 #define PlayScene_hpp
 

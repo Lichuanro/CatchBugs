@@ -6,6 +6,11 @@
 //
 //
 
+/**
+ show status of the game
+ includes the scores, records, buttons
+ */
+
 #ifndef StatusLayer_hpp
 #define StatusLayer_hpp
 

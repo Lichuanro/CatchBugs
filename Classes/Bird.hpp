@@ -6,6 +6,12 @@
 //
 //
 
+/**
+ This class is to define the bird class
+ create and control everything about the bird
+ create only one bird while playing
+ the action state is for further use
+ */
 #ifndef Bird_hpp
 #define Bird_hpp
 
@@ -37,12 +43,13 @@ public:
     
     void ready();
     void fly();
-    void swing();
     void catchBugs();
     void die();
+    
     void setVelocity();
     void setPosX();
     void rotateBird();
+    
     void pause();
     void resume();
 private:
@@ -53,7 +60,6 @@ private:
     
     Action * readyAction;
     Action * moveAction;
-    
     
     ActionState current_actionState;
     

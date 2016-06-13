@@ -6,6 +6,10 @@
 //
 //
 
+/**
+ the most important layer
+ all the game objects are added here
+ */
 #ifndef GameLayer_hpp
 #define GameLayer_hpp
 

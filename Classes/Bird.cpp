@@ -20,11 +20,7 @@ Bird::Bird(){
 }
 
 Bird::~Bird(){
-    if (readyAction) {
-        readyAction->release();
-        readyAction = NULL;
-    }
-    
+
 }
 
 

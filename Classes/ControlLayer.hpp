@@ -6,6 +6,11 @@
 //
 //
 
+/**
+ control the game
+ actually only the touch or click event
+ */
+
 #ifndef ControlLayer_hpp
 #define ControlLayer_hpp
 
