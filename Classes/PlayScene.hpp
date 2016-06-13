@@ -40,8 +40,6 @@ public:
     PlayScene();
     ~PlayScene();
     
-    void restart();
-    
     CREATE_FUNC(PlayScene);
     
     void set_tsm(SceneManager * sceneManager);

@@ -13,10 +13,10 @@
           <PointFrame FrameIndex="80" X="193.6184" Y="262.0425">
             <EasingData Type="0" />
           </PointFrame>
-          <PointFrame FrameIndex="102" X="237.1516" Y="260.3882">
+          <PointFrame FrameIndex="104" X="237.1516" Y="260.3882">
             <EasingData Type="1" />
           </PointFrame>
-          <PointFrame FrameIndex="132" X="261.1533" Y="98.6842">
+          <PointFrame FrameIndex="134" X="282.5073" Y="131.8080">
             <EasingData Type="1" />
           </PointFrame>
           <PointFrame FrameIndex="174" X="400.9454" Y="255.9528">
@@ -28,7 +28,10 @@
           <PointFrame FrameIndex="225" X="521.9281" Y="225.7679">
             <EasingData Type="6" />
           </PointFrame>
-          <PointFrame FrameIndex="259" X="642.3264" Y="302.7064">
+          <PointFrame FrameIndex="247" X="603.6935" Y="301.6176">
+            <EasingData Type="0" />
+          </PointFrame>
+          <PointFrame FrameIndex="262" X="664.9104" Y="314.7520">
             <EasingData Type="0" />
           </PointFrame>
           <PointFrame FrameIndex="283" X="753.0872" Y="280.2649">
@@ -51,10 +54,10 @@
           <ScaleFrame FrameIndex="80" X="0.1000" Y="0.1000">
             <EasingData Type="0" />
           </ScaleFrame>
-          <ScaleFrame FrameIndex="102" X="0.1000" Y="0.1000">
+          <ScaleFrame FrameIndex="104" X="0.1000" Y="0.1000">
             <EasingData Type="1" />
           </ScaleFrame>
-          <ScaleFrame FrameIndex="132" X="0.1000" Y="0.1000">
+          <ScaleFrame FrameIndex="134" X="0.1000" Y="0.1000">
             <EasingData Type="1" />
           </ScaleFrame>
           <ScaleFrame FrameIndex="174" X="0.1000" Y="0.1000">
@@ -66,7 +69,10 @@
           <ScaleFrame FrameIndex="225" X="0.1000" Y="0.1000">
             <EasingData Type="6" />
           </ScaleFrame>
-          <ScaleFrame FrameIndex="259" X="0.1000" Y="0.1000">
+          <ScaleFrame FrameIndex="247" X="0.1000" Y="0.1000">
+            <EasingData Type="0" />
+          </ScaleFrame>
+          <ScaleFrame FrameIndex="262" X="0.1000" Y="0.1000">
             <EasingData Type="0" />
           </ScaleFrame>
           <ScaleFrame FrameIndex="283" X="0.1000" Y="0.1000">
@@ -89,10 +95,10 @@
           <ScaleFrame FrameIndex="80" X="0.0000" Y="0.0000">
             <EasingData Type="0" />
           </ScaleFrame>
-          <ScaleFrame FrameIndex="102" X="0.0000" Y="0.0000">
+          <ScaleFrame FrameIndex="104" X="0.0000" Y="0.0000">
             <EasingData Type="1" />
           </ScaleFrame>
-          <ScaleFrame FrameIndex="132" X="0.0000" Y="0.0000">
+          <ScaleFrame FrameIndex="134" X="0.0000" Y="0.0000">
             <EasingData Type="1" />
           </ScaleFrame>
           <ScaleFrame FrameIndex="174" X="0.0000" Y="0.0000">
@@ -104,7 +110,10 @@
           <ScaleFrame FrameIndex="225" X="0.0000" Y="0.0000">
             <EasingData Type="6" />
           </ScaleFrame>
-          <ScaleFrame FrameIndex="259" X="0.0000" Y="0.0000">
+          <ScaleFrame FrameIndex="247" X="0.0000" Y="0.0000">
+            <EasingData Type="0" />
+          </ScaleFrame>
+          <ScaleFrame FrameIndex="262" X="0.0000" Y="0.0000">
             <EasingData Type="0" />
           </ScaleFrame>
           <ScaleFrame FrameIndex="283" X="0.0000" Y="0.0000">
@@ -210,13 +219,13 @@
             <FileData Type="Normal" Path="background.jpg" Plist="" />
             <BlendFunc Src="770" Dst="771" />
           </AbstractNodeData>
-          <AbstractNodeData Name="bird1" ActionTag="-1087597491" Tag="12" IconVisible="False" LeftMargin="285.5381" RightMargin="-944.5381" TopMargin="-253.1950" BottomMargin="-379.8050" ctype="SpriteObjectData">
+          <AbstractNodeData Name="bird1" ActionTag="-1087597491" Tag="12" IconVisible="False" LeftMargin="-656.4319" RightMargin="-2.5681" TopMargin="-206.0457" BottomMargin="-426.9543" ctype="SpriteObjectData">
             <Size X="1619.0000" Y="1273.0000" />
-            <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-            <Position X="1095.0381" Y="256.6950" />
+            <AnchorPoint ScaleX="0.5017" ScaleY="0.5000" />
+            <Position X="155.8115" Y="209.5457" />
             <Scale ScaleX="0.1000" ScaleY="0.1000" />
             <CColor A="255" R="255" G="255" B="255" />
-            <PrePosition X="1.1407" Y="0.4011" />
+            <PrePosition X="0.1623" Y="0.3274" />
             <PreSize X="1.6865" Y="1.9891" />
             <FileData Type="Normal" Path="bird1.png" Plist="" />
             <BlendFunc Src="1" Dst="771" />

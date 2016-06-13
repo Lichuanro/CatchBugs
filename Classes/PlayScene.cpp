@@ -9,8 +9,7 @@
 #include "PlayScene.hpp"
 
 bool PlayLayer::init(){
-    
-    
+
     Size winSize = Director::getInstance()->getWinSize();
     
     background = Sprite::create("res/background.jpg");
@@ -18,7 +17,6 @@ bool PlayLayer::init(){
     background->setScale(0.8, 0.9);
     this->addChild(background,0);
 
-    
     return true;
     
 }
@@ -41,7 +39,7 @@ PlayScene::~PlayScene(){
 
 bool PlayScene::init(){
     if (Scene::initWithPhysics()) {
-        this->getPhysicsWorld()->setGravity(Vec2(0,-900));
+        this->getPhysicsWorld()->setGravity(Vec2(0,-1000));
         playLayer = PlayLayer::create();
         this->addChild(playLayer);
         

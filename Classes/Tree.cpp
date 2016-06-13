@@ -159,19 +159,19 @@ void Tree::reset(int treeType){
 
     switch (treeType) {
         case 1:
-            treeS->setPosition(Vec2(visibleSize.width*random(1.2, 1.5),0));
+            treeS->setPosition(Vec2(visibleSize.width*random(1.2, 1.5) + visibleSize.width * random(0.0, 0.1),0));
             break;
             
         case 2:
-            treeM->setPosition(Vec2(visibleSize.width*random(1.2, 1.5),0));
+            treeM->setPosition(Vec2(visibleSize.width*random(1.2, 1.5) + visibleSize.width * random(0.0, 0.1),0));
             break;
             
         case 3:
-            treeL->setPosition(Vec2(visibleSize.width*random(1.2, 1.7),0));
+            treeL->setPosition(Vec2(visibleSize.width*random(1.2, 1.7) + visibleSize.width * random(0.0, 0.1),0));
             break;
             
         case 4:
-            treeXL->setPosition(Vec2(visibleSize.width*random(1.3, 1.9),0));
+            treeXL->setPosition(Vec2(visibleSize.width*random(1.3, 1.9) + visibleSize.width * random(0.0, 0.1),0));
             break;
             
         default:

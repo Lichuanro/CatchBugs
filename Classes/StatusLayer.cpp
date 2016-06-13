@@ -40,13 +40,11 @@ void StatusLayer::showReady(){
     click->runAction(blink);
     
     this->addChild(click);
-
 }
 
 
 void StatusLayer::showStart(){
     this->removeChild(click);
-
 }
 
 
@@ -56,7 +54,6 @@ void StatusLayer::backgroundBlur(){
     blur->setPosition(Vec2(visibleSize.width/2,visibleSize.height/2));
     blur->setScale(0.8, 0.9);
     this->addChild(blur);
-    
 }
 
 void StatusLayer::gameStart(){
@@ -99,8 +96,6 @@ void StatusLayer::gamePlay(int score){
         sprintf(bestScoreString, "%d", bestScore);
         bestScoreNumber->setString(bestScoreString);
     }
-    
-    
 }
 
 void StatusLayer::gameOver(int bestScore){
@@ -208,8 +203,8 @@ void StatusLayer::addGameResumeButton(){
     auto resumeButton = Menu::create(resume, NULL);
     resumeButton->setTag(1003);
     resumeButton->setPosition(Vec2(visibleSize.width/2,visibleSize.height * 0.44));
-    this->addChild(resumeButton);
     
+    this->addChild(resumeButton);
 }
 
 void StatusLayer::gameResumeButtonCallBack(cocos2d::Ref *sender){
@@ -218,7 +213,6 @@ void StatusLayer::gameResumeButtonCallBack(cocos2d::Ref *sender){
     this->removeChildByTag(1001);
     this->removeChildByTag(1002);
     this->removeChildByTag(1003);
-
 }
 
 void StatusLayer::showPause(){

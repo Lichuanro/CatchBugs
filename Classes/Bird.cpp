@@ -24,10 +24,6 @@ Bird::~Bird(){
         readyAction->release();
         readyAction = NULL;
     }
-    if (flyAction) {
-        flyAction->release();
-        flyAction = NULL;
-    }
     
 }
 
@@ -73,27 +69,10 @@ void Bird::createBird(){
     this->readyAction = Animate::create(readyAnimation);
     
     
-    
-    Animation * flyAnimation = Animation::create();
-    flyAnimation->addSpriteFrameWithFile("res/bird1.png");
-    flyAnimation->addSpriteFrameWithFile("res/bird2.png");
-    
-    flyAnimation->setDelayPerUnit(0.15);
-    flyAnimation->setRestoreOriginalFrame(true);
-    flyAnimation->setLoops(-1);
-    this->flyAction = Animate::create(flyAnimation);
-    
     ActionInterval * up = MoveBy::create(0.5f, Point(0,5));
     ActionInterval * down = up->reverse();
     
     this->moveAction = RepeatForever::create(Sequence::create(up,down, NULL));
-    
-    ActionInterval * rotateWhenCatchBug = RotateBy::create(0.1, 30);
-    
-    this->catchBugAction = Repeat::create(Sequence::create(rotateWhenCatchBug,rotateWhenCatchBug->reverse(), NULL), 1);
-    
-        
-    
 }
 
 bool Bird::changeState(ActionState actionState){

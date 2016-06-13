@@ -67,7 +67,7 @@ void Bug::moveWithScene(){
 
 void Bug::reset(){
     Size winSize = Director::getInstance()->getWinSize();
-    bug->setPosition(Vec2(winSize.width * random(1.1, 1.8),winSize.height * random(0.15, 0.8)));
+    bug->setPosition(Vec2(winSize.width * random(1.1, 1.8) + winSize.width * random(0.0, 0.2),winSize.height * random(0.15, 0.85)));
 }
 
 bool Bug::checkEaten(){

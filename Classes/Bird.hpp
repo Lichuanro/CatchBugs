@@ -19,7 +19,6 @@ USING_NS_CC;
 typedef enum action_State{
     READY_ACTION,
     FLY_ACTION,
-    SWING_ACTION,
     CATCHBUGS_ACTION,
     DIE_ACTION
     }ActionState;
@@ -53,10 +52,7 @@ private:
     bool changeState(ActionState actionState);
     
     Action * readyAction;
-    Action * flyAction;
-    Action * swingAction;
     Action * moveAction;
-    Action * catchBugAction;
     
     
     ActionState current_actionState;

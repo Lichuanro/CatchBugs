@@ -60,7 +60,7 @@ bool GameLayer::onContactBegin(const cocos2d::PhysicsContact &contact){
     
     int tag_A = spriteA->getTag();
     int tag_B = spriteB->getTag();
-    //1 for trees, 2 for bird and 3 for bugs
+    //1 for trees, 2 for bird and 3+ for bugs
     
     if (tag_A == 2 && tag_B >= 3) {
         this->bird->catchBugs();
@@ -151,7 +151,6 @@ void GameLayer::gameOver(){
         return;
     }
     
- //   SimpleAudioEngine::getInstance()->playEffect(<#const char *filePath#>);
     this->bird->die();
     this->bird->setRotation(-90);
     this->bugManager->unscheduleUpdate();

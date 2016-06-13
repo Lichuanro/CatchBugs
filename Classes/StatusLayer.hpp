@@ -39,22 +39,17 @@ private:
     void showReady();
     void showStart();
     void showPause();
+    
     void backgroundBlur();
     
     void addReplayButton();
-    
     void addEndButton();
-    
     void addGamePauseButton();
-    
     void addGameResumeButton();
     
     void replayButtonCallBack(Ref *sender);
-    
     void endButtonCallBack(Ref *sender);
-    
     void gamePauseButtonCallBack(Ref *sender);
-    
     void gameResumeButtonCallBack(Ref *sender);
 
     Sprite * click;
